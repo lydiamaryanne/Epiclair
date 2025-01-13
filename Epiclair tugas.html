@@ -247,7 +247,14 @@
     .left3 {
         margin-left:2%;
     } /*sama kayak yang pertama cuma diubah ubah ukurannya biar pas ditengah, soalnya waktu dicoba, kalo pake rumus sama persis ga pas ditengahh*/
-
+    
+    nav {
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: rgb(91, 0, 0);
+    }
+    
     ul{
         list-style:none;
         background-color: rgb(91, 0, 0);
@@ -275,7 +282,7 @@
 
     @media (max-width: 480px) {
             h4 {
-                padding:5px 10px; 
+                padding:5px 3px; 
             }
         }
     
@@ -332,6 +339,19 @@
         display:block;
     } 
 
+    h5{
+        color:white;
+        text-shadow:5px 0 5px gold;
+        font-size:150%;
+        margin-right:5%;
+    }
+
+    @media (max-width: 800px) {
+        h5 {
+                display:none;
+            }
+        }
+
 </style>
 </head>
 <body>
@@ -355,6 +375,7 @@
                 </ul>
             </li>
         </ul>
+        <h5 id="epi">EPICLAIR: The Chosen Warrior</h5>
     </nav>
 
     <div class="title">
