@@ -1,0 +1,206 @@
+<!doctype html>
+<html>
+<head>
+<title>EPICLAIR 2025</title>
+<meta name="viewport" content="width=device-width"> 
+<style>
+    body{
+        background-image: url("https://i.imgur.com/Gg88wbk.png");
+        background-size:cover;
+        background-repeat: no-repeat;
+        overflow:hidden;
+    }
+    .navbar {
+            width:90%;
+            height:20%;
+            margin:auto;
+            display:flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar #instagram{
+            width:60px;
+            margin:30px 0;
+            margin-left:30px;
+            cursor:pointer;
+        }
+
+        .right{
+            display:flex;
+            align-items: center;
+        }
+        .right .logo{
+            margin-left: 40px;
+            width:70px;
+        }
+
+        button{
+            padding: 8px 25px;
+            background:transparent;
+            border:2px solid #000000;
+            border-radius:20px;
+            font-size:12px;
+            font-weight:bold;
+            cursor:pointer;
+        }
+
+        .title{
+            top:5%;
+            left:38%;
+            position:absolute;
+            text-align:center;
+        }
+        
+        h1{
+            font-size: 50px;
+            letter-spacing: 15px;
+            margin-bottom: 10px;
+        }
+        
+        h3{
+            margin-top: 0px;
+            font-size:20px;
+            letter-spacing:5px;
+            margin-bottom:14px;
+        }
+
+        .slider{
+            height:30%;
+            display:flex;
+            align-items: center;
+            position:absolute;
+            right:32%;
+            bottom:20px;
+        }
+
+        .slider img {
+            width:90px;
+            height:40px;
+        }
+
+        #prev , #next{
+            width:20px;
+            cursor:pointer;
+        }
+
+        .preview{
+            display:flex;
+            justify-content: space-around;
+            align-items: center;
+            margin:30px;
+        }
+        .preview img{
+            width:60px;
+            margin: 0 10px;
+            opacity:0.4;
+        }
+
+        .preview .active {
+            display:block;
+            border: 3px solid #fff;
+            width: 100px;
+            height:50px;
+            opacity:1;
+        }
+
+        .mid{
+            display:flex;
+            margin-top:6%;
+            margin-left:34%;
+        }
+        
+        #one{
+            width: 500px;
+            height:300px;
+        }
+
+        #special{
+            border-style:outset;
+            border-color:gold;
+            border-width:2px;
+            width:1000px;
+            position:absolute;
+            left:40%;
+            transform:translateX(-50%);
+        }
+
+</style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="https://i.imgur.com/9OtgoNT.png" id="instagram">
+        <div class="right">
+            <button id="Sign Up" type="button">Sign Up</button>
+            <img src="https://i.imgur.com/5DBWwwD.png" class="logo">
+        </div>
+    </div>
+
+    <div class="title">
+        <h1>EPICLAIR</h1>
+        <h3>The Chosen Warrior</h3>
+        <hr id="special">
+    </div>
+
+    <div class="slider">
+        <img src="https://i.imgur.com/9IY3r1T.png" id="prev">
+        <div class="preview">
+            <img src="https://i.imgur.com/JYHyXC1.png" class="active thumbnail">
+            <img src="https://i.imgur.com/klOYtrg.png" class="thumbnail">
+            <img src="https://i.imgur.com/tYqpePe.jpeg" class="thumbnail">
+            <img src="https://i.imgur.com/6weuqg9.png" class="thumbnail">
+            <img src="https://i.imgur.com/i0Pp3Eo.jpeg" class="thumbnail">
+        </div>
+        <img src="https://i.imgur.com/mHYyq8Z.png" id="next">
+    </div>
+
+    <div class="mid">
+        <img src="https://i.imgur.com/JYHyXC1.png" id="one">
+    </div>
+
+    <script>
+        var prev = document.getElementById("prev");
+        var next = document.getElementById("next");
+        var thumbnail = document.getElementsByClassName("thumbnail");
+        var midImage = document.getElementById("one");
+
+        var pic = new Array(
+            "https://i.imgur.com/JYHyXC1.png",
+            "https://i.imgur.com/klOYtrg.png",
+            "https://i.imgur.com/tYqpePe.jpeg",
+            "https://i.imgur.com/6weuqg9.png",
+            "https://i.imgur.com/i0Pp3Eo.jpeg",
+        );
+
+        let i=0;
+        next.onclick = function(){
+            if(i < 4){
+                midImage.src = pic[i + 1];
+                thumbnail[i+1].classList.add("active");
+                thumbnail[i].classList.remove("active");
+            i++;
+            }
+        }
+        prev.onclick = function(){
+            if(i > 0){
+                midImage.src = pic[i-1];
+                thumbnail[i-1].classList.add("active");
+                thumbnail[i].classList.remove("active");
+            i--;
+            }
+        }
+
+        var sign = document.getElementById("Sign Up")
+
+        sign.onclick = function(){
+            window.location.href="https://forms.gle/1ogQN4WPXaNy64117";
+        }
+
+        var instagram = document.getElementById("instagram")
+
+        instagram.onclick=function(){
+            window.location.href="https://www.instagram.com/epiclair.pcu?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+        }
+    </script>
+</body>
+</html>
